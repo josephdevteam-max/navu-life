@@ -583,6 +583,53 @@ a {
   box-shadow: var(--shadow);
 }
 
+.safety-card {
+  display: grid;
+  gap: 24px;
+  padding: clamp(28px, 6vw, 52px);
+  border: 1px solid #cfdccd;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(173, 224, 61, 0.16), transparent 38%),
+    #eef4eb;
+  box-shadow: 0 18px 50px rgba(29, 67, 47, 0.08);
+}
+
+.safety-card .eyebrow {
+  color: var(--sofrito-deep);
+}
+
+.safety-card h2 {
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+.safety-copy {
+  max-width: 680px;
+}
+
+.safety-copy p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+}
+
+.safety-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+  color: var(--sofrito-deep);
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 760px) {
+  .safety-card {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
 .promise-card::after {
   content: "";
   position: absolute;

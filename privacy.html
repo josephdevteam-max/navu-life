@@ -28,34 +28,53 @@
 
   <main id="main" class="wrap prose">
     <h1>Privacy</h1>
-    <p class="meta">Last updated August 27, 2026.</p>
+    <p class="meta">Effective August 28, 2026.</p>
+
+    <div class="privacy-summary">
+      <strong>The short version</strong>
+      <p>NAVU uses the information you choose to share to hold the conversation, suggest food, and improve recommendations. We do not sell personal information or place ads in your conversation.</p>
+    </div>
 
     <h2>Who we are</h2>
-    <p>NAVU is an independent companion that talks first, then helps you eat. It is not a doctor, not medical advice, and not affiliated with or endorsed by the U.S. Department of Veterans Affairs.</p>
+    <p>NAVU is an independent AI companion that talks first, then helps you eat. This policy explains what the app processes, what stays on your device, and what may be stored by NAVU’s backend.</p>
 
-    <h2>What we send to reply</h2>
-    <p>When you chat, the text of that conversation is sent to NAVU’s backend so we can write a reply and, when you’re ready, suggest a plate. We need that text to answer you. We do not put ads in the chat, and we do not sell your data.</p>
+    <h2>Information processed when you use NAVU</h2>
+    <p>To answer a message, NAVU sends your current message and up to eight recent conversation turns to its backend. The request may also include the vibe you selected, dietary and allergy preferences, cooking method, pantry ingredients, and a device-generated session identifier. This context helps NAVU continue the conversation and avoid treating every message like a first message.</p>
 
     <h2>Optional pantry photo</h2>
-    <p>If you snap a shelf, that photo is sent to the backend so we can mark what you already have. You do not have to use the camera. Grocery is Have vs Need for the current plate.</p>
+    <p>If you choose a pantry photo, the image is sent securely to NAVU’s backend and an AI vision provider to identify likely food ingredients. The camera is optional. NAVU does not intentionally add the original photo to your profile or grocery history; the detected ingredient names are what the app uses.</p>
 
     <h2>What stays on your device</h2>
-    <p>Settings such as your name, vibe (Lowkey / Everyday / Locked In), food cultures you pick, and cooking method are stored on the device. We do not assume your cultural identity. Mix is the default until you choose otherwise.</p>
+    <p>Your preferred name, appearance setting, vibe, selected food cultures, dietary and allergy preferences, cooking method, grocery list, pantry list, and recent meal memory are stored locally on your device using app preferences. NAVU does not require an account.</p>
 
-    <h2>Where it runs</h2>
-    <p>The backend runs on Google Firebase in <strong>us-central1</strong>. We use Firebase App Check so random callers cannot burn the AI from outside the NAVU app.</p>
+    <h2>What NAVU may store</h2>
+    <p>NAVU may store a session identifier with meal interactions such as shown, selected, saved, cooked, skipped, liked, disliked, “too much work,” or “make again.” These records can include meal identifiers and broad context such as energy level or meal source. They help recommendations learn without requiring your real-world identity. Generated meal records and aggregate meal performance may also be stored.</p>
 
-    <h2>We don’t sell data</h2>
-    <p>We do not sell your chat, photos, or settings. We do not run a paywall. Free forever means free — not a trial.</p>
+    <h2>Service providers and processing</h2>
+    <p>NAVU’s backend runs on Google Firebase in the United States. Google Gemini and OpenAI models may process chat context or pantry images to provide the requested features. Those providers process information under their own service and privacy terms. NAVU uses HTTPS in transit and Firebase App Check to reduce unauthorized access to its AI endpoints.</p>
 
-    <h2>Not medical</h2>
-    <p>NAVU helps you talk and eat. It is not a therapist, not a clinician, and not a crisis service. Food suggestions are not diet or medical treatment.</p>
+    <h2>How information is used</h2>
+    <ul>
+      <li>Provide companion replies, meal suggestions, pantry recognition, grocery help, and cook-together guidance.</li>
+      <li>Remember recent context and reduce repetitive meal suggestions.</li>
+      <li>Learn which meals are useful from voluntary in-app actions and feedback.</li>
+      <li>Protect, debug, and improve the reliability and safety of the service.</li>
+    </ul>
+
+    <h2>Sale and advertising</h2>
+    <p>NAVU does not sell personal information and does not place third-party ads in your conversation. NAVU may use clearly labeled affiliate or partner links outside the conversation. If you choose to follow one, the destination service may process the visit or purchase under its own privacy policy, and NAVU may receive a commission.</p>
+
+    <h2>Retention and choices</h2>
+    <p>Local information remains on your device until you clear it, reset the app, or uninstall it. Backend interaction and generated-meal records may be retained for service operation, recommendation learning, safety, and debugging. NAVU does not require accounts. For a privacy or deletion request tied to a session, contact us at the address below.</p>
+
+    <h2>Health and safety</h2>
+    <p>NAVU is not a doctor, therapist, clinician, or crisis service. Its conversation and food suggestions are not medical care, diagnosis, or treatment.</p>
 
     <h2>If you need help right now</h2>
     <p>Call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline). If you are in immediate danger, call 911. More at <a href="https://988lifeline.org/">988lifeline.org</a>.</p>
 
     <h2>Contact</h2>
-    <p>Questions about this policy: <a href="mailto:hello@navu.life">hello@navu.life</a>.</p>
+    <p>Privacy questions or requests: <a href="mailto:hello@navu.life">hello@navu.life</a>.</p>
   </main>
 
   <footer class="wrap site-footer">

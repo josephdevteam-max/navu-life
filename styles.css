@@ -336,6 +336,77 @@ a {
   font-size: 15px;
 }
 
+.video-proof {
+  display: grid;
+  gap: 34px;
+  align-items: center;
+  margin-bottom: 76px;
+  padding: clamp(24px, 5vw, 52px);
+  border: 1px solid #42483f;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(217, 110, 48, 0.13), transparent 32%),
+    #242a23;
+}
+
+.video-copy h3 {
+  max-width: 540px;
+  margin: 0 0 14px;
+  font: 600 clamp(2rem, 5vw, 3.25rem)/1.04 var(--serif);
+  letter-spacing: -0.035em;
+}
+
+.video-copy > p:last-of-type {
+  max-width: 560px;
+  margin: 0;
+  color: #bfc4bc;
+}
+
+.video-moments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.video-moments span {
+  padding: 7px 11px;
+  border: 1px solid #4b5148;
+  border-radius: 999px;
+  color: #e0e4dd;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.video-figure {
+  width: min(100%, 315px);
+  margin: 0;
+  justify-self: center;
+}
+
+.video-device {
+  background: #090b09;
+  border-color: #4d554a;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+}
+
+.video-device video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 20;
+  border-radius: 35px;
+  background: #0e172a;
+  object-fit: cover;
+}
+
+.video-figure figcaption {
+  margin-top: 14px;
+  color: #bfc4bc;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .product-tour {
   position: relative;
   display: grid;
@@ -1115,6 +1186,10 @@ a {
 
   .product-tour {
     grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.7fr);
+  }
+
+  .video-proof {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.65fr);
   }
 
   .story-step-reverse .step-copy {

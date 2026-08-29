@@ -75,6 +75,27 @@
           <p>Every screen below was captured directly from the running Android app using NAVU's live service. These are real results, not design mockups.</p>
         </div>
       </aside>
+      <div class="wrap video-proof">
+        <div class="video-copy">
+          <p class="step-kicker">See the full handoff</p>
+          <h3>Company first. Gumbo when you are ready.</h3>
+          <p>This is one real conversation inside NAVU. It stays present through a hard moment, keeps the requested dish intact, builds the complete meal, and opens calm cooking guidance.</p>
+          <div class="video-moments" aria-label="Moments shown in the video">
+            <span>Conversation</span>
+            <span>Traditional gumbo</span>
+            <span>Cook together</span>
+          </div>
+        </div>
+        <figure class="video-figure">
+          <div class="device-shell video-device">
+            <video muted loop playsinline controls preload="metadata" poster="assets/navu-companion-human-real.png" aria-label="Real NAVU app recording moving from a companion conversation to traditional gumbo and cooking guidance">
+              <source src="assets/navu-live-demo.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <figcaption><span class="live-dot" aria-hidden="true"></span> Recorded from the running Android app</figcaption>
+        </figure>
+      </div>
       <div class="wrap product-tour" data-product-tour>
         <div class="tour-copy">
           <div class="tour-meta">
@@ -319,6 +340,21 @@
     <p>© 2026 NAVU · navu.life</p>
   </footer>
   <script>
+    (() => {
+      const video = document.querySelector('.video-device video');
+      if (!video || !('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      }, { threshold: [0, 0.55] });
+
+      observer.observe(video);
+    })();
+
     (() => {
       const root = document.querySelector('[data-product-tour]');
       if (!root) return;

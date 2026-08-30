@@ -31,7 +31,7 @@
       <a href="#demo">See it work</a>
       <a href="#regions">Food regions</a>
       <a href="#technology">How it works</a>
-      <a href="#vibes">Vibes</a>
+      <a href="#saved-meals">My meals</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </header>
@@ -72,14 +72,14 @@
         <span class="capture-check" aria-hidden="true">✓</span>
         <div>
           <strong>Captured from the running app.</strong>
-          <p>Every screen below was captured directly from the running Android app using NAVU's live service. These are real results, not design mockups.</p>
+          <p>These are screens from working NAVU builds, not design mockups. Conversations and meal suggestions use NAVU's live service. Saved recipes and cooking screens show what happens next, right in the app.</p>
         </div>
       </aside>
       <div class="wrap video-proof">
         <div class="video-copy">
           <p class="step-kicker">Real-time product demo</p>
           <h3>Company first. Gumbo when you are ready.</h3>
-          <p>Watch the typing, live responses, meal creation, and cooking guidance in the working app. Pauses have been shortened for viewing.</p>
+          <p>Watch the typing, live responses, meal creation, and cooking guidance in the working app. Pauses have been shortened for viewing. This recording shows an earlier build; the screenshots below show the updated cooking and saved-meal experience.</p>
           <div class="video-moments" aria-label="Moments shown in the video">
             <span>Conversation</span>
             <span>Traditional gumbo</span>
@@ -100,16 +100,17 @@
         <div class="tour-copy">
           <div class="tour-meta">
             <span><i aria-hidden="true"></i> Live product tour</span>
-            <span>Android capture</span>
+            <span>Working app captures</span>
           </div>
           <p class="step-kicker">Real conversations. Real meals.</p>
           <h3 data-tour-title>It knows when you just need company.</h3>
           <p data-tour-body>Speak the way you normally speak. NAVU can stay present without turning the moment into a food prompt.</p>
-          <div class="tour-tabs" role="tablist" aria-label="Choose a NAVU product screen">
-            <button type="button" role="tab" aria-selected="true" data-tour-tab="talk">Conversation</button>
-            <button type="button" role="tab" aria-selected="false" data-tour-tab="gumbo">Gumbo</button>
-            <button type="button" role="tab" aria-selected="false" data-tour-tab="ramen">Ramen</button>
-            <button type="button" role="tab" aria-selected="false" data-tour-tab="cook">Cook together</button>
+          <div class="tour-tabs" role="group" aria-label="Choose a NAVU product screen">
+            <button type="button" aria-pressed="true" data-tour-tab="talk">Conversation</button>
+            <button type="button" aria-pressed="false" data-tour-tab="gumbo">Gumbo</button>
+            <button type="button" aria-pressed="false" data-tour-tab="ramen">Ramen</button>
+            <button type="button" aria-pressed="false" data-tour-tab="cook">Cook with me</button>
+            <button type="button" aria-pressed="false" data-tour-tab="saved">My meals</button>
           </div>
           <div class="tour-signals" data-tour-signals aria-live="polite">
             <span>No meal card</span>
@@ -152,13 +153,46 @@
           <div class="step-copy">
             <span class="step-number">03</span>
             <p class="step-kicker">Stay with me</p>
-            <h3>Cook together. One move at a time.</h3>
-            <p>No wall of instructions. NAVU breaks what you are making into calm, human-sized steps and lets you move at your pace.</p>
+            <h3>Cook with me. One step at a time.</h3>
+            <p>Keep the recipe beside you as you cook. See the current step, heat guidance, and safety notes, with a timer when the recipe calls for one. Move forward when you are ready.</p>
           </div>
           <div class="device-shell device-small">
-            <img src="assets/navu-cook-real.png" width="430" height="932" alt="NAVU guiding one clear cooking step at a time" loading="lazy">
+            <img src="assets/navu-cook-with-me-20260830.png" width="1080" height="2400" alt="Cook with me in the updated NAVU app, showing a saved gumbo recipe one step at a time" loading="lazy">
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="saved-section" id="saved-meals" aria-labelledby="saved-heading">
+      <div class="wrap saved-layout">
+        <div class="saved-copy">
+          <p class="eyebrow">Good meals are worth keeping</p>
+          <h2 id="saved-heading">Go to the store.<br>Your meal will be here.</h2>
+          <p class="saved-intro">A shopping list should not outlast the recipe it came from. Save a meal, pick up what you need, and come back to the same ingredients and instructions.</p>
+          <div class="saved-features">
+            <article>
+              <span aria-hidden="true">01</span>
+              <div><h3>A place for your favorites</h3><p>My meals brings saved recipes, favorites, and recent meals together. Find one by its name or an ingredient.</p></div>
+            </article>
+            <article>
+              <span aria-hidden="true">02</span>
+              <div><h3>Shopping with the recipe attached</h3><p>Add ingredients to your list and NAVU saves the meal with them. Your list gives you a way back to the recipe.</p></div>
+            </article>
+            <article>
+              <span aria-hidden="true">03</span>
+              <div><h3>The same meal, ready to cook</h3><p>Open the recipe you saved, not a newly generated replacement. Starting a fresh conversation leaves your saved meals and shopping list in place.</p></div>
+            </article>
+          </div>
+          <p class="saved-note">Shown in the latest development build. Meals are saved on this device, not synced between devices. Clearing app or browser storage removes them.</p>
+        </div>
+        <figure class="saved-figure">
+          <div class="device-shell"><img src="assets/navu-saved-meals-20260830.png" width="1080" height="2400" alt="My meals in the working NAVU app with saved recipes, favorites, recent meals, and search" loading="lazy"></div>
+          <figcaption>My meals · captured from the working app<br><a href="assets/navu-your-recipe-20260830.png">View the saved-recipe screenshot</a></figcaption>
+        </figure>
+      </div>
+      <div class="wrap stove-note">
+        <div><p class="eyebrow">Your kitchen, your equipment</p><h3>Not every stove cooks the same.</h3></div>
+        <div><p>Tell NAVU whether you use gas, electric coil or radiant, or induction. Cooking guidance takes that into account, from how quickly the heat changes to the cookware you need.</p><p class="fine">Not sure? That is an option too. Follow the recipe's cooking cues and your appliance instructions, not a guessed dial setting.</p></div>
       </div>
     </section>
 
@@ -229,13 +263,13 @@
         </article>
         <article class="tech-card">
           <span>03</span>
-          <h3>Remembers what matters</h3>
-          <p>Your preferences, kitchen, recent meals, and the conversation already in motion help NAVU avoid generic, repetitive, or out-of-place answers.</p>
+          <h3>Keeps the good ones</h3>
+          <p>Save a meal you want to make, favorite one you loved, and come back to the same recipe when you are ready.</p>
         </article>
         <article class="tech-card">
           <span>04</span>
           <h3>Turns talk into action</h3>
-          <p>When you are ready, NAVU can move from conversation to one realistic meal card, a useful grocery list, and calm step-by-step cooking help.</p>
+          <p>When you are ready, move from a conversation to a meal, a connected shopping list, and cooking help that fits your kitchen.</p>
         </article>
       </div>
     </section>
@@ -264,7 +298,7 @@
 
     <section class="wrap section" id="grocery">
       <h2>Know what you have. See what you need.</h2>
-      <p class="muted">Your grocery list stays connected to what you are making. Rice in the pantry goes under Have. Anything missing stays under Need.</p>
+      <p class="muted">Your grocery list stays connected to the meals you are making. Keep what you have under Have and what you need under Need. A new suggestion will not replace the shopping list you already started.</p>
       <div class="split">
         <div class="have">
           <h3>Have</h3>
@@ -342,7 +376,7 @@
   <script>
     (() => {
       const video = document.querySelector('.video-device video');
-      if (!video || !('IntersectionObserver' in window)) return;
+      if (!video || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
@@ -385,12 +419,20 @@
           signals: ['Request kept', 'Time estimated', 'Ready to cook']
         },
         cook: {
-          title: 'It stays for the part that matters.',
-          body: 'Cook together turns a recipe into one calm move at a time, with room to pause and continue at your own pace.',
-          src: 'assets/navu-cook-real.png',
-          alt: 'NAVU guided cooking captured from the Android app',
-          label: 'Cook together',
-          signals: ['One step now', 'Progress visible', 'Pace stays yours']
+          title: 'Your recipe, right beside you.',
+          body: 'Cook with me keeps each step, its heat guidance, and relevant safety notes together. Follow the saved recipe at your own pace.',
+          src: 'assets/navu-cook-with-me-20260830.png',
+          alt: 'The updated NAVU Cook with me screen guiding a saved gumbo recipe',
+          label: 'Cook with me · latest build',
+          signals: ['Original recipe', 'Heat guidance', 'Step-by-step help']
+        },
+        saved: {
+          title: 'A meal you can come back to.',
+          body: 'Save it now, shop when you have time, and reopen the exact recipe. Favorites and recent meals have a home outside the conversation.',
+          src: 'assets/navu-saved-meals-20260830.png',
+          alt: 'My meals in NAVU with saved recipes, favorites, recent meals, and search',
+          label: 'My meals · latest build',
+          signals: ['Saved recipes', 'Favorites', 'Connected shopping']
         }
       };
 
@@ -401,15 +443,16 @@
       const label = root.querySelector('[data-tour-label]');
       const signals = root.querySelector('[data-tour-signals]');
       let active = 'talk';
-      let timer;
+      let transition;
 
       const show = (key) => {
         const screen = screens[key];
         if (!screen || key === active && image.src.endsWith(screen.src)) return;
         active = key;
-        tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.tourTab === key)));
+        tabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.tourTab === key)));
+        window.clearTimeout(transition);
         image.classList.add('is-switching');
-        window.setTimeout(() => {
+        transition = window.setTimeout(() => {
           image.src = screen.src;
           image.alt = screen.alt;
           title.textContent = screen.title;
@@ -424,24 +467,9 @@
         }, 140);
       };
 
-      const start = () => {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        window.clearInterval(timer);
-        timer = window.setInterval(() => {
-          const order = ['talk', 'gumbo', 'ramen', 'cook'];
-          show(order[(order.indexOf(active) + 1) % order.length]);
-        }, 5200);
-      };
-
       tabs.forEach((tab) => tab.addEventListener('click', () => {
         show(tab.dataset.tourTab);
-        start();
       }));
-      root.addEventListener('mouseenter', () => window.clearInterval(timer));
-      root.addEventListener('mouseleave', start);
-      root.addEventListener('focusin', () => window.clearInterval(timer));
-      root.addEventListener('focusout', start);
-      start();
     })();
   </script>
 </body>

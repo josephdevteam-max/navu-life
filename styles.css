@@ -491,7 +491,7 @@ a {
   color: #fff;
 }
 
-.tour-tabs button[aria-selected="true"] {
+.tour-tabs button[aria-pressed="true"] {
   border-color: var(--lime);
   background: var(--lime);
   color: #17200f;
@@ -611,6 +611,69 @@ a {
   justify-self: center;
   background: #0d100d;
   border-color: #41463f;
+}
+
+.saved-section {
+  padding: 88px 0;
+  background: var(--cream);
+}
+
+.saved-layout {
+  display: grid;
+  gap: 42px;
+  align-items: center;
+}
+
+.saved-copy h2 {
+  margin: 0 0 20px;
+  font: 600 clamp(2.1rem, 5vw, 3.6rem)/1.08 var(--serif);
+  letter-spacing: -0.035em;
+}
+
+.saved-intro {
+  max-width: 580px;
+  color: #595f55;
+  font-size: 1.12rem;
+}
+
+.saved-features {
+  display: grid;
+  gap: 22px;
+  margin: 30px 0;
+}
+
+.saved-features article {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.saved-features article > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 36px;
+  background: #e6eddf;
+  border-radius: 50%;
+  color: var(--sofrito-deep);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.saved-features h3 { margin: 0 0 5px; font-size: 1.05rem; }
+.saved-features p { margin: 0; max-width: 500px; color: #595f55; }
+.saved-note { max-width: 550px; color: #595f55; font-size: 0.85rem; }
+.saved-figure { width: min(100%, 330px); margin: 0; justify-self: center; }
+.saved-figure figcaption { margin-top: 16px; text-align: center; font-size: 13px; color: #595f55; }
+.stove-note { display: grid; gap: 20px; margin-top: 60px; padding: 30px; border: 1px solid #ced9c6; border-radius: 24px; background: #edf2e8; }
+.stove-note h3 { margin: 0; font: 600 clamp(1.6rem, 3vw, 2.1rem)/1.15 var(--serif); }
+.stove-note p { margin: 0 0 10px; }
+.stove-note .fine { margin-bottom: 0; color: #595f55; }
+#saved-meals, #demo, #regions, #technology, #vibes { scroll-margin-top: 90px; }
+
+@media (min-width: 860px) {
+  .saved-layout { grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr); }
+  .stove-note { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
 }
 
 .region-section {

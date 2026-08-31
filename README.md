@@ -4,6 +4,12 @@ Public page for **https://navu.life**. Static HTML only. No app code, service co
 
 The cooking app lives in the private `navu-mvp` repo.
 
+## Release status
+
+Android is ready for release testing. iPhone support is planned for a future
+release. Testing inquiries go to the existing hello@navu.life address; the
+website does not promise immediate access or public app-store availability.
+
 ## Screenshot provenance
 
 The August 30, 2026 captures are unedited screenshots from the running Android

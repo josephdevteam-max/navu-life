@@ -998,6 +998,32 @@ a {
   letter-spacing: -0.045em;
 }
 
+.release-platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 24px 0;
+  list-style: none;
+}
+
+.release-platforms li {
+  padding: 18px 20px;
+  border: 1px solid var(--divider);
+  border-radius: 16px;
+}
+
+.release-platforms strong,
+.release-platforms span {
+  display: block;
+}
+
+.release-platforms span {
+  margin-top: 5px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
 .promise-card {
   position: relative;
   overflow: hidden;

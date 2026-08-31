@@ -7,7 +7,7 @@ The cooking app lives in the private `navu-mvp` repo.
 ## Release status
 
 Android is ready for release testing. iPhone support is planned for a future
-release. Testing inquiries go to the existing hello@navu.life address; the
+release. Testing inquiries go to joseph.devteam@gmail.com; the
 website does not promise immediate access or public app-store availability.
 
 ## Screenshot provenance

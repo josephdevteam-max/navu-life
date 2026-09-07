@@ -65,7 +65,7 @@
     },
     saved: {
       counter: '04 / 04 — Keep the good ones',
-      title: 'Tonight’s idea. Another night’s dinner.',
+      title: 'A meal you love. Ready for another day.',
       body: 'Keep saved recipes, favorites, and recent meals in My meals. Reopen the recipe you chose, rather than generating a different one.',
       file: 'navu-saved-meals-20260830.png',
       alt: 'Existing NAVU My meals screen with saved recipes, favorites, and recent meals',

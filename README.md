@@ -31,3 +31,7 @@ Saved meals stay on the device where they were saved. Screenshots do not imply a
 - Mode buttons switch the matching screenshots and description; tour buttons switch the image, text, full-image link, and pressed state.
 - Flutter capture run: 19 passed. Related all-meal/snack Flutter tests: 35 passed.
 - No production deployment or merge performed. Release-status and contact copy preserved from the current live site.
+
+## Allergy and diet limitations
+Visible homepage guidance and a nearby showcase link require ingredient, label, substitution, and cross-contact checks. Suggestions are not guaranteed suitable; dietary preferences are not medical advice. Current meal/recipe captures include the app notice (navu-mvp 96fdaa6). No legal-immunity claim or consent waiver. App validation: 266 tests, 123 diet guard checks, 19 captures passed; analyzer has 75 informational findings, no errors or warnings.
+

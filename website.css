@@ -176,3 +176,5 @@ summary::-webkit-details-marker{display:none}
 @media(max-width:800px){.mode-explorer{grid-template-columns:minmax(0,1fr)}.mode-explorer-copy{min-width:0}.mode-options button{min-width:0;flex:1 1 0}}
 @media(max-width:360px){.mode-options button{font-size:11px;padding-inline:5px}}
 @media(max-width:800px){.product-tour{grid-template-columns:minmax(0,1fr)}.tour-content,.tour-visual{min-width:0}.tour-phone{max-width:100%}}
+
+.food-safety-section{margin-top:72px;padding:40px;border:1px solid var(--line);border-radius:24px;background:var(--surface)}.food-safety-section h2{margin:14px 0 24px}.food-safety-section>p:not(.eyebrow){max-width:820px;margin:16px 0;color:var(--muted)}.food-safety-section strong{color:var(--ink)}@media(max-width:600px){.food-safety-section{padding:24px}.food-safety-section h2{font-size:34px}.footer-top nav{flex-wrap:wrap;gap:12px 24px}}

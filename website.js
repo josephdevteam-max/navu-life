@@ -36,56 +36,45 @@
   const tour = document.querySelector('[data-product-tour]');
   if (!tour) return;
   const screens = {
-    gumbo: {
-      counter: '01 / 04 — Find your meal',
-      title: 'A real dish. Not a random swap.',
-      body: 'When you have something specific in mind, start there. The existing gumbo screen shows a complete meal, ingredients, and a way into cooking.',
-      file: 'navu-gumbo-real.png',
-      alt: 'Existing NAVU gumbo meal screen',
-      caption: 'Meal screen · Existing app capture',
-      features: ['A dish you asked for', 'Ingredients to work with', 'A next step into cooking']
-    },
-    ramen: {
-      counter: '02 / 04 — Start with a craving',
-      title: 'Something specific in mind? Say it.',
-      body: 'A craving is a perfectly good place to start. This earlier app capture shows a ramen request turned into a meal card.',
-      file: 'navu-ramen-real.png',
-      alt: 'Existing NAVU ramen recipe screen',
-      caption: 'Ramen screen · Existing app capture',
-      features: ['Ask in your own words', 'Name a dish or cuisine', 'Explore the recipe details']
-    },
-    cook: {
-      counter: '03 / 04 — Get cooking',
-      title: 'One step at a time. At your pace.',
-      body: 'Cook with me keeps the saved recipe’s current step, heat guidance, and relevant safety notes together while you cook.',
-      file: 'navu-cook-with-me-20260830.png',
-      alt: 'Existing NAVU Cook with me screen showing a gumbo recipe step and timer',
-      caption: 'Cook with me · August 30 development build',
-      features: ['Follow the saved recipe', 'See the current step', 'Use a timer where provided']
-    },
-    saved: {
-      counter: '04 / 04 — Keep the good ones',
-      title: 'A meal you love. Ready for another day.',
-      body: 'Keep saved recipes, favorites, and recent meals in My meals. Reopen the recipe you chose, rather than generating a different one.',
-      file: 'navu-saved-meals-20260830.png',
-      alt: 'Existing NAVU My meals screen with saved recipes, favorites, and recent meals',
-      caption: 'My meals · August 30 development build',
-      features: ['Save a recipe for later', 'Revisit your favorites', 'Stored on this device—not synced']
-    }
+    chat: {counter:'01 / 04 — Start anywhere',title:'A little less deciding. A lot more doing.',body:'Breakfast, lunch, dinner, or something in between. Start with a craving, a few ingredients, or whatever energy you have.',light:'welcome',dark:'welcome-dark',alt:'NAVU chat home with three visible energy modes',features:['Three modes, always within reach','Your conversation comes first','Meals and snacks, all day']},
+    meal: {counter:'02 / 04 — Your next meal',title:'The useful details. Right in the chat.',body:'See the estimated time, effort, servings, and ingredients together. Open the recipe when it sounds right, or save it for another day.',light:'meal',dark:'dark',alt:'NAVU chat bubbles and chicken meal card with time, effort, servings, and ingredients',features:['Meal facts at a glance','Cooking method and ingredients','Open or save the recipe']},
+    recipe: {counter:'03 / 04 — Make it happen',title:'From a good idea to something on your plate.',body:'Keep the recipe close, check your ingredients, and move into cooking. Your conversation is there when you return.',light:'recipe',dark:'recipe-dark',alt:'NAVU recipe detail with ingredients and cooking actions',features:['Ingredients with amounts','Your recipe in one place','Back to the same conversation']},
+    setup: {counter:'04 / 04 — Make it yours',title:'Your kitchen. Your way of cooking.',body:'Stove, oven, microwave, or air fryer. Tell NAVU what you cook with, then choose the preferences that help it fit your day.',light:'onboarding',dark:'onboarding-dark',alt:'NAVU setup with illustrated stove, oven, microwave, and air fryer choices',features:['Recognizable appliance choices','Quick, skippable setup','Preferences you can revisit']}
   };
+  let activeScreen = 'chat';
+  let activeMode = 'everyday';
+  let theme = 'dark';
+  const modeInfo = {
+    lowkey: {file:'lowkey',label:'Lowkey',description:'Keep it manageable. Less prep, fewer steps, and something good to eat with the energy you have.'},
+    everyday: {file:'welcome',label:'Everyday',description:'A familiar meal at your usual pace. Enough room to cook, without making it a project.'},
+    locked: {file:'locked',label:'Locked In',description:'A little more room to explore. Try a technique or a more involved dish when you feel like cooking.'}
+  };
+  const modeButtons = [...document.querySelectorAll('[data-mode]')];
+  const showMode = key => {
+    activeMode = key;
+    const mode = modeInfo[key];
+    const shot = document.querySelector('[data-mode-screen]');
+    shot.src = `assets/preview/${mode.file}${theme === 'dark' ? '-dark' : ''}.png`;
+    shot.alt = `${mode.label} selected on NAVU’s updated chat home in ${theme} appearance`;
+    document.querySelector('[data-mode-description]').textContent = mode.description;
+    modeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === key)));
+  };
+  modeButtons.forEach(button => button.addEventListener('click', () => showMode(button.dataset.mode)));
+  document.querySelector('.mode-options').hidden = false;
   const buttons = [...tour.querySelectorAll('[data-tour-tab]')];
   const image = tour.querySelector('[data-tour-screen]');
   const show = key => {
     const screen = screens[key];
     if (!screen) return;
-    const source = `assets/${screen.file}`;
+    activeScreen = key;
+    const source = `assets/preview/${screen[theme]}.png`;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.tourTab === key)));
     image.src = source;
     image.alt = screen.alt;
     tour.querySelector('[data-tour-counter]').textContent = screen.counter;
     tour.querySelector('[data-tour-title]').textContent = screen.title;
     tour.querySelector('[data-tour-body]').textContent = screen.body;
-    tour.querySelector('[data-tour-caption]').textContent = screen.caption;
+    tour.querySelector('[data-tour-caption]').textContent = `Updated Flutter UI · Example data · ${theme === "dark" ? "Dark" : "Light"} appearance`;
     tour.querySelector('[data-tour-full]').href = source;
     tour.querySelector('[data-tour-features]').replaceChildren(...screen.features.map(text => {
       const item = document.createElement('li');
@@ -108,4 +97,17 @@
     });
   });
   tour.querySelector('.tour-buttons').hidden = false;
+  const themeButton = document.querySelector('[data-theme-toggle]');
+  themeButton.hidden = false;
+  themeButton.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = theme;
+    themeButton.textContent = theme === 'dark' ? 'Light view ☼' : 'Dark view ☾';
+    themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} appearance`);
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#14211b' : '#f7f5ef';
+    document.querySelector('[data-hero-screen]').src = `assets/preview/${theme === 'dark' ? 'dark' : 'meal'}.png`;
+    show(activeScreen);
+    showMode(activeMode);
+  });
+  show(activeScreen);
 })();

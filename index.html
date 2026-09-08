@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NAVU — Meals that fit your energy</title>
   <meta name="description" content="Low energy or ready to cook? Tell NAVU what you need right now. Find meals that fit your time, ingredients, and effort. Lowkey. Everyday. Locked In.">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#14211b">
   <meta property="og:title" content="NAVU — Meals that fit your energy">
   <meta property="og:description" content="Tell NAVU what you need right now. Find a meal that fits. Chat-first, energy-aware, and starting with food.">
   <meta property="og:image" content="https://navu.life/icon-512.png">
@@ -30,6 +30,7 @@
         <a href="#demo">Inside the app</a>
       </nav>
       <a class="button button-small header-cta" href="#phones">Explore early access <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to light appearance" data-theme-toggle hidden>Light view <span aria-hidden="true">☼</span></button>
       <details class="mobile-menu">
         <summary aria-label="Navigation menu">Menu <span aria-hidden="true">+</span></summary>
         <nav aria-label="Mobile navigation">
@@ -57,11 +58,11 @@
         <div class="hero-principle"><span aria-hidden="true">01 /</span> Less deciding. More getting on with your day.</div>
       </div>
       <figure class="hero-visual">
-        <div class="visual-topline"><span>A meal. A next step.</span><span aria-hidden="true">↗</span></div>
+        <div class="visual-topline"><span>Your words. A way forward.</span><span aria-hidden="true">↗</span></div>
         <div class="phone-frame hero-phone">
-          <img src="assets/navu-gumbo-real.png" width="1080" height="2400" alt="NAVU’s existing Android screen with energy modes, a gumbo recipe, and the chat composer" fetchpriority="high">
+          <img src="assets/preview/dark.png" data-hero-screen width="390" height="844" alt="Updated NAVU chat with a meal card, cooking time, effort, servings, and ingredients" fetchpriority="high">
         </div>
-        <figcaption><span class="small-mark" aria-hidden="true"></span> Existing app capture · Design may evolve</figcaption>
+        <figcaption><span class="small-mark" aria-hidden="true"></span> New app design · Example meal</figcaption>
       </figure>
     </section>
 
@@ -104,6 +105,20 @@
           <div class="mode-bottom"><span>More ambition. Your call.</span><span aria-hidden="true">↗</span></div>
         </article>
       </div>
+      <div class="mode-explorer" data-mode-explorer>
+        <div class="mode-explorer-copy">
+          <p class="eyebrow">A pace for right now</p>
+          <h3>Same chat.<br><em>Your kind of day.</em></h3>
+          <div class="mode-options" role="group" aria-label="Preview an energy mode" hidden>
+            <button type="button" data-mode="lowkey" aria-pressed="false">Lowkey</button>
+            <button type="button" data-mode="everyday" aria-pressed="true">Everyday</button>
+            <button type="button" data-mode="locked" aria-pressed="false">Locked In</button>
+          </div>
+          <div aria-live="polite" aria-atomic="true"><p class="mode-detail" data-mode-description>A familiar meal at your usual pace. Enough room to cook, without making it a project.</p></div>
+          <p class="section-note">Try each mode to see its place in the updated app.</p>
+        </div>
+        <figure><div class="phone-frame mode-phone"><img data-mode-screen src="assets/preview/welcome-dark.png" width="390" height="844" alt="Everyday selected on NAVU’s updated chat home" loading="lazy"></div><figcaption>Actual UI capture · Development preview</figcaption></figure>
+      </div>
       <p class="section-note">No mode is better than another. Your time, preferences, and constraints still matter.</p>
     </section>
 
@@ -126,30 +141,30 @@
     <section class="section container" id="demo" aria-labelledby="demo-heading">
       <div class="section-heading">
         <div><p class="eyebrow">A look inside NAVU</p><h2 id="demo-heading">From “what should I eat?”<br><em>to something you can make.</em></h2></div>
-        <p>These are the existing app screenshots, kept as they are. Explore the meal, cooking, and saved-recipe screens.</p>
+        <p>A calmer chat. Useful meal details. A kitchen that feels like yours. Explore fresh captures of the updated app in light and dark.</p>
       </div>
       <div class="product-tour" data-product-tour>
         <div class="tour-content">
           <div class="tour-buttons" role="group" aria-label="Choose an app screenshot" hidden>
-            <button type="button" data-tour-tab="gumbo" aria-pressed="false">A meal</button>
-            <button type="button" data-tour-tab="ramen" aria-pressed="false">A craving</button>
-            <button type="button" data-tour-tab="cook" aria-pressed="true">Cooking</button>
-            <button type="button" data-tour-tab="saved" aria-pressed="false">Saved</button>
+            <button type="button" data-tour-tab="chat" aria-pressed="true">Chat</button>
+            <button type="button" data-tour-tab="meal" aria-pressed="false">Your meal</button>
+            <button type="button" data-tour-tab="recipe" aria-pressed="false">Recipe</button>
+            <button type="button" data-tour-tab="setup" aria-pressed="false">Your kitchen</button>
           </div>
           <div class="tour-text" aria-live="polite" aria-atomic="true">
-            <p class="eyebrow" data-tour-counter>03 / 04 — Get cooking</p>
-            <h3 data-tour-title>One step at a time.<br>At your pace.</h3>
-            <p data-tour-body>Cook with me keeps the saved recipe’s current step, heat guidance, and relevant safety notes together while you cook.</p>
-            <ul class="tour-features" data-tour-features><li>Follow the saved recipe</li><li>See the current step</li><li>Use a timer where provided</li></ul>
+            <p class="eyebrow" data-tour-counter>01 / 04 — Start anywhere</p>
+            <h3 data-tour-title>A little less deciding. A lot more doing.</h3>
+            <p data-tour-body>Breakfast, lunch, dinner, or something in between. Start with a craving, a few ingredients, or whatever energy you have.</p>
+            <ul class="tour-features" data-tour-features><li>Three modes, always within reach</li><li>Your conversation comes first</li><li>Meals and snacks, all day</li></ul>
           </div>
-          <a class="text-link" data-tour-full href="assets/navu-cook-with-me-20260830.png">View full screenshot <span aria-hidden="true">↗</span></a>
+          <a class="text-link" data-tour-full href="assets/preview/welcome-dark.png">View full screenshot <span aria-hidden="true">↗</span></a>
         </div>
         <figure class="tour-visual">
-          <div class="phone-frame tour-phone"><img data-tour-screen src="assets/navu-cook-with-me-20260830.png" width="1080" height="2400" alt="Existing NAVU Cook with me screen showing a gumbo recipe step and timer" loading="eager"></div>
-          <figcaption data-tour-caption>Cook with me · August 30 development build</figcaption>
+          <div class="phone-frame tour-phone"><img data-tour-screen src="assets/preview/welcome-dark.png" width="390" height="844" alt="NAVU chat home in dark mode with three energy selections" loading="lazy"></div>
+          <figcaption data-tour-caption>Updated Flutter UI · Example data · Dark appearance</figcaption>
         </figure>
       </div>
-      <noscript><p class="section-note">More app screens: <a href="assets/navu-gumbo-real.png">Gumbo</a> · <a href="assets/navu-ramen-real.png">Ramen</a> · <a href="assets/navu-saved-meals-20260830.png">Saved meals</a></p></noscript>
+      <p class="section-note">App previews use example data from the development build. They show the interface, not a live conversation or a public iPhone release.</p>
     </section>
 
     <section class="practical-section" aria-labelledby="practical-heading">

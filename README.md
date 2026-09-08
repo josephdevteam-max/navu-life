@@ -10,19 +10,24 @@ Android is ready for release testing. iPhone support is planned for a future
 release. Testing inquiries go to joseph.devteam@gmail.com; the
 website does not promise immediate access or public app-store availability.
 
+## Updated website preview
+
+Based on live-site main commit `874d65d`, visually checked against navu.life on September 8, 2026. Homepage changes live in `index.html`, `website.css`, and `website.js`; the legacy `styles.css` remains untouched for privacy and error pages.
+
+Run locally with `python -m http.server 8804 --bind 127.0.0.1`. No build step, API, analytics, or persistent theme storage. Dark appearance is the default; the header toggle switches the page and app captures together. Without JavaScript, the initial dark screenshots and all informational content remain available.
+
 ## Screenshot provenance
 
-The August 30, 2026 captures are unedited screenshots from the running Android
-development build, not interface mockups:
+`assets/preview/` contains September 8 captures of the actual Flutter widgets in the NAVU feature branch, using in-memory example data. They are development previews, not new live service responses, native iOS captures, or proof of public release. The screenshot harness is `App/test/preview/capture_ui.dart` in navu-mvp. It captures the three modes by tapping their real UI controls. Dark/light pairs cover chat, meal, recipe, setup, Lowkey, and Locked In.
 
-- `assets/navu-saved-meals-20260830.png`: My meals with a saved, favorited gumbo.
-- `assets/navu-your-recipe-20260830.png`: reopening that recipe from the library.
-- `assets/navu-cook-with-me-20260830.png`: the same gumbo's roux step and timer.
+The bundled DM Sans font and OFL license come from the app. Historical Android screenshots remain available at their existing asset URLs, but are no longer the homepage showcase.
 
-The gumbo was previously created through the live service. These new captures
-show local saved-recipe and cooking features; they do not depict new conversation
-responses. The existing conversation captures and video remain from an earlier
-working build. The page identifies that distinction.
+Saved meals stay on the device where they were saved. Screenshots do not imply account synchronization or store availability.
 
-Saved meals currently stay on the device where they were saved. Screenshots do
-not imply account synchronization or store availability.
+## Validation
+
+- JavaScript syntax check passed.
+- Actual browser review at desktop, 390px, and 320px; light and dark appearances.
+- Mode buttons switch the matching screenshots and description; tour buttons switch the image, text, full-image link, and pressed state.
+- Flutter capture run: 19 passed. Related all-meal/snack Flutter tests: 35 passed.
+- No production deployment or merge performed. Release-status and contact copy preserved from the current live site.

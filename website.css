@@ -1,4 +1,16 @@
 /* NAVU marketing site. Deliberately isolated from the legacy stylesheet. */
+.meal-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.meal-story{min-width:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column}
+.meal-story-copy{padding:28px}
+.meal-story-copy .eyebrow{font-size:12px;letter-spacing:1px}
+.meal-story h3{font-size:30px;line-height:1.2;margin:16px 0 12px}
+.meal-story-copy>p:last-child{color:var(--muted);font-size:16px}
+.meal-capture{display:block;width:calc(100% - 48px);max-width:290px;margin:auto auto 24px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#101827;transition:transform .2s}
+.meal-capture:hover{transform:translateY(-4px)}
+.meal-capture img{width:100%;height:auto}
+.meal-showcase+.energy-section{padding-top:24px}
+@media(max-width:800px){.meal-gallery{grid-template-columns:minmax(0,1fr)}.meal-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}.meal-capture{margin:24px auto;width:calc(100% - 24px)}.meal-story-copy{padding:24px}.meal-story h3{font-size:26px}}
+@media(max-width:480px){.meal-story{grid-template-columns:minmax(0,1fr)}.meal-capture{width:calc(100% - 48px);max-width:260px;margin-top:0}}
 :root{color-scheme:light;--paper:#f7f5ef;--surface:#fffdf8;--ink:#172b24;--muted:#536158;--line:#d9ddd3;--green:#234d3b;--accent:#d3ec85;--sage:#e8eddf;--sans:"DM Sans",Arial,Helvetica,sans-serif;--serif:Georgia,'Times New Roman',serif}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:104px}

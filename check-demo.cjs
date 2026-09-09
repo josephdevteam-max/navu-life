@@ -6,7 +6,7 @@ class Element {
   append(...items) { this.children.push(...items); }
   replaceChildren(...items) { this.children = items; }
   addEventListener(name, fn) { this.events[name] = fn; }
-  querySelector() { return this.children.find(c => c.tag === 'button'); }
+  querySelector(tag) { return this.children.find(c => c.tag === tag) || this.children.map(c => c.querySelector?.(tag)).find(Boolean); }
   focus() {}
   get text() { return this.textContent + this.children.map(c => c.text).join(' '); }
 }
@@ -21,26 +21,36 @@ const click = text => {
   button.events.click();
 };
 assert.equal(root.hidden, false);
-click('I’m tired but I want gumbo');
-click('I have chicken, rice, and sausage');
+const select = names => {
+  for (const label of result.children[0].children.filter(c => c.tag === 'label')) {
+    const input = label.children[0];
+    input.checked = names.includes(label.children[1].textContent);
+    input.events.change();
+  }
+};
+select(['Cooked chicken', 'Cooked rice', 'Smoked sausage']);
+click('Build my shopping list →');
 let lists = result.children[1].children;
 assert.match(lists[0].text, /Cooked chicken.*Cooked rice.*Smoked sausage/);
 assert.doesNotMatch(lists[1].text, /Cooked chicken|Cooked rice|Smoked sausage/);
-click('Preview recipe');
+click('See my gumbo plan →');
 assert.match(result.text, /Chicken & sausage gumbo/);
-click('Preview a cooking step');
+click('Show me the first cooking step →');
 assert.match(result.text, /No timer is running/);
-click('Back to shopping list');
-click('Change ingredients');
-click('Only the chicken');
+click('View shopping list');
+click('Edit what I have');
+assert.equal(result.children[0].children.filter(c => c.tag === 'label' && c.children[0].checked).length, 3);
+select(['Cooked chicken']);
+click('Build my shopping list →');
 lists = result.children[1].children;
 assert.doesNotMatch(lists[0].text, /Cooked rice|Smoked sausage/);
 assert.match(lists[1].text, /Cooked rice.*Smoked sausage/);
-click('Change ingredients');
-click('I need everything');
+click('Edit what I have');
+select([]);
+click('Build my shopping list →');
 assert.match(result.text, /Nothing confirmed yet/);
 reset.events.click();
-assert.equal(messages.children.length, 1);
-assert.equal(result.children.length, 0);
+assert.equal(messages.children.length, 2);
+assert.equal(result.children[0].children.filter(c => c.tag === 'label' && c.children[0].checked).length, 0);
 assert.equal(actions.children.length, 1);
 console.log('Demo: all ingredient branches, recipe, cooking, return navigation and restart passed.');

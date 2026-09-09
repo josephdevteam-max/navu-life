@@ -1,4 +1,11 @@
 /* NAVU marketing site. Deliberately isolated from the legacy stylesheet. */
+.screenshot-open{overflow:hidden}
+.screenshot-viewer{padding:0;border:1px solid var(--line);border-radius:18px;background:var(--paper);color:var(--ink);width:min(650px,calc(100% - 24px));max-height:92dvh;overflow:auto}
+.screenshot-viewer::backdrop{background:#000b}
+.screenshot-toolbar{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);font-size:14px}
+.screenshot-toolbar button{min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer}
+.screenshot-content{padding:16px;display:flex;justify-content:center}
+.screenshot-content img{width:auto;max-width:100%;height:auto;max-height:none;border-radius:8px}
 .meal-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .meal-story{min-width:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column}
 .meal-story-copy{padding:28px}

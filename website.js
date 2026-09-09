@@ -1,6 +1,30 @@
 /* Small, local-only enhancements. No API calls, analytics, forms, or storage. */
 (() => {
   'use strict';
+  const viewer = document.querySelector('[data-screenshot-viewer]');
+  if (viewer && typeof viewer.showModal === 'function') {
+    let opener;
+    const close = () => viewer.close();
+    document.querySelectorAll('.meal-capture, [data-tour-full]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        opener = link;
+        const preview = viewer.querySelector('[data-screenshot-image]');
+        preview.src = link.href;
+        preview.alt = (link.querySelector('img') || document.querySelector('[data-tour-screen]')).alt;
+        viewer.showModal();
+        document.documentElement.classList.add('screenshot-open');
+      });
+    });
+    viewer.querySelector('[data-screenshot-close]').addEventListener('click', close);
+    viewer.addEventListener('click', event => { if (event.target === viewer) close(); });
+    viewer.addEventListener('close', () => {
+      document.documentElement.classList.remove('screenshot-open');
+      if (opener && opener.isConnected) opener.focus({preventScroll: true});
+    });
+    // Native dialog handles Escape, focus containment, and the inert background.
+  }
   const menu = document.querySelector('.mobile-menu');
   const closeMenu = () => { if (menu) menu.open = false; };
   if (menu) {

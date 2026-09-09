@@ -1,4 +1,18 @@
 /* NAVU marketing site. Deliberately isolated from the legacy stylesheet. */
+.interactive-demo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start;margin-bottom:48px}
+.demo-intro h3{font-size:38px;line-height:1.15;margin:18px 0}.demo-intro>p{color:var(--muted)}
+.demo-app{min-width:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--surface);padding:24px}
+.demo-header{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.demo-header strong{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.demo-header span{font-size:12px;font-weight:400;color:var(--muted)}
+.demo-app button{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);cursor:pointer;text-align:left;font-size:14px}
+.demo-app button:hover{border-color:var(--green)}.demo-messages{display:grid;gap:12px;margin-block:20px;max-height:340px;overflow:auto}
+.demo-bubble{max-width:92%;padding:14px 16px;border-radius:16px;background:var(--sage);font-size:16px;line-height:1.55}
+.demo-bubble>span{display:block;font-size:12px;font-weight:700;margin-bottom:5px;color:var(--muted)}.demo-user{justify-self:end;border:1px solid var(--line);background:var(--paper)}
+.demo-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.demo-actions button:first-child{background:var(--green);color:var(--paper)}
+.demo-hint,.demo-note{font-size:14px;color:var(--muted);margin-top:16px}.demo-app h4{font-size:23px;margin:20px 0 12px}.demo-app h5{font-size:16px;margin:12px 0 6px}
+.demo-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}.demo-list>div{padding:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px}.demo-list ul,.demo-app ol{padding-left:20px;font-size:15px}.demo-app li{margin-block:5px}
+@media(max-width:800px){.interactive-demo{grid-template-columns:minmax(0,1fr);gap:24px}.demo-app{padding:20px}.demo-intro h3{font-size:32px}}
+@media(max-width:360px){.demo-list{grid-template-columns:1fr}.demo-actions button{width:100%}}
 .screenshot-open{overflow:hidden}
 .screenshot-viewer{padding:0;border:1px solid var(--line);border-radius:18px;background:var(--paper);color:var(--ink);width:min(650px,calc(100% - 24px));max-height:92dvh;overflow:auto}
 .screenshot-viewer::backdrop{background:#000b}

@@ -105,7 +105,12 @@
     themeButton.textContent = theme === 'dark' ? 'Light view ☼' : 'Dark view ☾';
     themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} appearance`);
     document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#14211b' : '#f7f5ef';
-    // The illustrative hero has one appearance; actual app captures below switch themes.
+    const hero = document.querySelector('[data-hero-screen]');
+    hero.src = theme === 'dark' ? 'assets/navu-gumbo-chat-example.png' : 'assets/preview/welcome.png';
+    hero.alt = theme === 'dark' ? 'Illustrative NAVU gumbo conversation in dark appearance' : 'NAVU chat home in light appearance';
+    document.querySelector('[data-hero-caption]').textContent = theme === 'dark'
+      ? 'Example conversation · Illustrative mockup'
+      : 'Chat home · Actual app development preview';
     show(activeScreen);
     showMode(activeMode);
   });

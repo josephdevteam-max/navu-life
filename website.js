@@ -105,7 +105,7 @@
     themeButton.textContent = theme === 'dark' ? 'Light view ☼' : 'Dark view ☾';
     themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} appearance`);
     document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#14211b' : '#f7f5ef';
-    document.querySelector('[data-hero-screen]').src = `assets/preview/${theme === 'dark' ? 'welcome-dark' : 'welcome'}.png`;
+    // The illustrative hero has one appearance; actual app captures below switch themes.
     show(activeScreen);
     showMode(activeMode);
   });

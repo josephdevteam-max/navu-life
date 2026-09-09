@@ -44,6 +44,18 @@
   let activeScreen = 'chat';
   let activeMode = 'everyday';
   let theme = 'dark';
+  const mealCaptures = [...document.querySelectorAll('.meal-capture')].map(link => ({
+    link,
+    image: link.querySelector('img'),
+    dark: link.getAttribute('href'),
+    alt: link.querySelector('img').alt
+  }));
+  const showMealCaptures = () => mealCaptures.forEach(capture => {
+    const source = theme === 'dark' ? capture.dark : capture.dark.replace('.png', '-light.png');
+    capture.image.src = source;
+    capture.link.href = source;
+    capture.image.alt = `${capture.alt} — ${theme === 'light' ? 'illustrative light theme adaptation' : 'original dark capture'}`;
+  });
   const modeInfo = {
     lowkey: {file:'lowkey',label:'Lowkey',description:'Keep it manageable. Less prep, fewer steps, and something good to eat with the energy you have.'},
     everyday: {file:'welcome',label:'Everyday',description:'A familiar meal at your usual pace. Enough room to cook, without making it a project.'},
@@ -113,6 +125,7 @@
       : 'Chat home · Actual app development preview';
     show(activeScreen);
     showMode(activeMode);
+    showMealCaptures();
   });
   show(activeScreen);
 })();

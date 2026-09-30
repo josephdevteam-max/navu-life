@@ -61,23 +61,40 @@ legal links, and image loading. Block external network requests during this loca
 review. Static and browser checks do not verify production DNS, HTTPS, mail
 delivery, app-store release, native app operation, or provider behavior.
 
-## Replacement hosting and domain connection, still pending
+## Selected hosting and domain connection, still pending
 
-The proposed destination is a separate Firebase Hosting site for this marketing
-website within the existing Firebase project. Verify the cloud configuration and
-approve a new site ID, Hosting target, static-root configuration, and release
-process before creating anything. Preserve the existing Flutter Hosting site;
-the marketing website must not overwrite it. No hosting purchase is proposed.
+The owner selected Cloudflare Pages Free for this static marketing website.
+Firebase remains the app backend/hosting provider; do not create a Firebase
+marketing site or deploy the website to its existing app site. No hosting plan
+purchase or paid Functions/Workers add-on is part of this release.
 
-After approval, use that marketing site's custom-domain wizard to connect the
-Squarespace-registered `neldo.app` and chosen `www` behavior. Enter the exact
-verification TXT and routing records supplied by the selected site's wizard.
-No GitHub or generic Firebase DNS addresses are proposed here. Review conflicting
-Squarespace parking A, `www`, and HTTPS records as part of the approved connection.
+The reviewed direct-upload artifact has 26 files with `index.html` and `404.html`
+at its root. It contains no Functions folder, `_worker.js`, secrets, CNAME,
+backend, or app build. No build step or custom headers/redirect rules are required.
+Pages serves the legal HTML pages and redirects `.html` requests to their clean
+paths; the existing root 404 preserves missing-page behavior. See [Pages routing](https://developers.cloudflare.com/pages/configuration/serving-pages/).
 
-Preserve Google Workspace MX, verification TXT, SPF TXT, and DKIM TXT records,
-plus `_domainconnect`; do not delete the DNS zone or replace all records. Then
-verify apex/`www` behavior, HTTPS, all localized/legal links, and inbound/reply
-delivery for `support@neldo.app` before release. Redirecting the old domain
-requires a separate approved plan. Firebase, DNS, account changes, deployment,
-pushes, PRs, and merges remain subject to the owner's explicit authorization.
+Use the authenticated owner Cloudflare dashboard's Workers & Pages → Create
+application → Pages → Direct Upload / drag and drop flow. Upload the reviewed
+ZIP as-is, choose the Free plan, and verify the supplied `pages.dev` address
+before connecting the domain. The dashboard's security challenge currently
+blocks the parent's session; the owner must finish normal account access.
+No account or live site was created from this execution environment. See
+[Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
+
+To serve `neldo.app` directly, add it under the Pages project's Custom domains.
+Cloudflare requires the apex to be an active zone in the same account with
+Cloudflare nameservers. Domain registration stays at Squarespace. Before the
+separately approved nameserver switch, copy and compare all existing Google
+Workspace MX, verification TXT, SPF TXT, DKIM TXT and `_domainconnect` records;
+DNS scanning alone is not verification. Use the actual assigned nameservers
+and Pages CNAME, and retire only conflicting parking web records/HTTPS hints
+as reviewed. Verify DNS, HTTPS, localized/legal links and support mailbox
+delivery after the switch. The old `navu.life` redirect remains separate.
+[Cloudflare custom-domain guidance](https://developers.cloudflare.com/pages/configuration/custom-domains/).
+
+[Cloudflare pricing](https://developers.cloudflare.com/pages/functions/pricing/)
+states that static asset requests are free and unlimited when no Function is
+invoked. This artifact invokes none. Existing domain, Google Workspace and app
+costs are separate. Source pushes/PRs/merges and app release remain separately
+gated; direct upload does not require changing GitHub Pages or CI credentials.

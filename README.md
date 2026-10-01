@@ -78,9 +78,10 @@ facilitating commercial transactions or providing commercial SaaS. The current
 service. The launch section says public access is closed and core meal help is
 free. However, this is product promotion and draft terms anticipate optional paid
 services/marketplace offers. GitHub does not expressly exempt every business
-marketing site; hosting eligibility remains uncertain. Review that purpose with
-GitHub Support before treating Pages as confirmed production hosting. Do not
-claim blanket permission based only on the absence of payment code.
+marketing site; hosting eligibility remains uncertain. GitHub Support can resolve
+that applicability question. Do not claim blanket permission based only on the
+absence of payment code. The current website provides project information and
+does not operate the app or offer paid transactions.
 
 The 26 active static files in the reviewed archive total approximately 709 KB.
 The existing Pages repository root also includes unchanged historical assets and
@@ -92,12 +93,12 @@ the official limits above.
 
 Read-only source/protection evidence: main has no active branch protection and
 no repository rulesets at the time inspected, but this task still uses a PR for
-review. Latest successful Pages jobs used main. The direct Pages-settings API
-read was blocked with a Forbidden transport response; the available connector
-does not support a Pages-settings endpoint. These are distinct from a confirmed
-GitHub authorization denial. Parent must inspect authenticated Settings > Pages
-for the actual source, folder and custom domain before any production merge.
-Do not change settings merely to bypass an access restriction.
+review. The parent verified authenticated Settings > Pages: Deploy from a branch,
+main, /(root), custom domain navu.life with successful DNS check, and Enforce HTTPS
+checked. This resolves the source/settings read blocker. Earlier direct API reads
+received a Forbidden transport response, and the connector does not support a
+Pages-settings endpoint; neither established a GitHub authorization denial.
+No settings were changed to bypass an access restriction.
 
 After website/purpose review, the parent coordinates production publication and
 the separately approved domain switch. Keep `navu.life` configured until the

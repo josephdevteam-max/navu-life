@@ -21,12 +21,12 @@ URLs and social metadata target `https://neldo.app`. The owner reports that
 verified. The existing prelaunch, provider-verification, and app-release qualifiers
 remain in place.
 
-`CNAME` deliberately still contains `navu.life`: it records the current GitHub
-Pages custom domain. The owner has rejected GitHub as the replacement website
-host; GitHub remains the source repository. Merging to `main` currently triggers
-GitHub Pages publication, so review Pages disablement or the approved export
-process before any push or merge. This source is a review candidate, not a
-completed domain migration. No hosting or DNS settings have been changed.
+`CNAME` deliberately still contains `navu.life`: it preserves the existing
+GitHub Pages custom-domain connection until the parent reviews and approves a
+coordinated switch to `neldo.app`. Canonical/social metadata targets the intended
+new domain, but no redirect or domain setting has been changed. The owner has
+cancelled the Cloudflare workflow and requested GitHub Pages publication.
+Website code is reviewed separately from app/backend releases.
 
 The website's existing N monogram remains applicable to Neldo. The active gallery
 uses only an authentic, brand-free historical capture of ingredient gathering and
@@ -61,40 +61,46 @@ legal links, and image loading. Block external network requests during this loca
 review. Static and browser checks do not verify production DNS, HTTPS, mail
 delivery, app-store release, native app operation, or provider behavior.
 
-## Selected hosting and domain connection, still pending
+## GitHub Pages review and domain cutover
 
-The owner selected Cloudflare Pages Free for this static marketing website.
-Firebase remains the app backend/hosting provider; do not create a Firebase
-marketing site or deploy the website to its existing app site. No hosting plan
-purchase or paid Functions/Workers add-on is part of this release.
+The Pages candidate is based on website main
+`369e5cba7e96b3f978915d359c7cf471fcbe012f` and the tested Neldo static source.
+Use the review branch `codex/neldo-github-pages` and a pull request targeting
+`main`; do not push main directly or force-push. This candidate keeps the existing
+root `.nojekyll` static layout and `CNAME` unchanged. It excludes the abandoned
+Cloudflare build scripts and configuration. App/backend code and deployment are
+not part of the website pull request.
 
-The reviewed direct-upload artifact has 26 files with `index.html` and `404.html`
-at its root. It contains no Functions folder, `_worker.js`, secrets, CNAME,
-backend, or app build. No build step or custom headers/redirect rules are required.
-Pages serves the legal HTML pages and redirects `.html` requests to their clean
-paths; the existing root 404 preserves missing-page behavior. See [Pages routing](https://developers.cloudflare.com/pages/configuration/serving-pages/).
+GitHub's [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
+prohibit using Pages to run an online business, e-commerce, or a site primarily
+facilitating commercial transactions or providing commercial SaaS. The current
+14 HTML pages have no forms, signin, checkout, payment integrations or app/API
+service. The launch section says public access is closed and core meal help is
+free. However, this is product promotion and draft terms anticipate optional paid
+services/marketplace offers. GitHub does not expressly exempt every business
+marketing site; hosting eligibility remains uncertain. Review that purpose with
+GitHub Support before treating Pages as confirmed production hosting. Do not
+claim blanket permission based only on the absence of payment code.
 
-Use the authenticated owner Cloudflare dashboard's Workers & Pages → Create
-application → Pages → Direct Upload / drag and drop flow. Upload the reviewed
-ZIP as-is, choose the Free plan, and verify the supplied `pages.dev` address
-before connecting the domain. The dashboard's security challenge currently
-blocks the parent's session; the owner must finish normal account access.
-No account or live site was created from this execution environment. See
-[Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
+The approximately 709 KB reviewed static site is below the published 1 GB size
+limit. Pages has a soft 100 GB/month bandwidth limit and may rate-limit traffic;
+it is not an unlimited hosting commitment. See the official limits above.
 
-To serve `neldo.app` directly, add it under the Pages project's Custom domains.
-Cloudflare requires the apex to be an active zone in the same account with
-Cloudflare nameservers. Domain registration stays at Squarespace. Before the
-separately approved nameserver switch, copy and compare all existing Google
-Workspace MX, verification TXT, SPF TXT, DKIM TXT and `_domainconnect` records;
-DNS scanning alone is not verification. Use the actual assigned nameservers
-and Pages CNAME, and retire only conflicting parking web records/HTTPS hints
-as reviewed. Verify DNS, HTTPS, localized/legal links and support mailbox
-delivery after the switch. The old `navu.life` redirect remains separate.
-[Cloudflare custom-domain guidance](https://developers.cloudflare.com/pages/configuration/custom-domains/).
+Read-only source/protection evidence: main has no active branch protection and
+no repository rulesets at the time inspected, but this task still uses a PR for
+review. Latest successful Pages jobs used main. The direct Pages-settings API
+read was blocked with a Forbidden transport response; the available connector
+does not support a Pages-settings endpoint. These are distinct from a confirmed
+GitHub authorization denial. Parent must inspect authenticated Settings > Pages
+for the actual source, folder and custom domain before any production merge.
+Do not change settings merely to bypass an access restriction.
 
-[Cloudflare pricing](https://developers.cloudflare.com/pages/functions/pricing/)
-states that static asset requests are free and unlimited when no Function is
-invoked. This artifact invokes none. Existing domain, Google Workspace and app
-costs are separate. Source pushes/PRs/merges and app release remain separately
-gated; direct upload does not require changing GitHub Pages or CI credentials.
+After website/purpose review, the parent coordinates production publication and
+the separately approved domain switch. Keep `navu.life` configured until the
+new DNS and HTTPS plan is ready. Preserve every Google Workspace MX/SPF/DKIM,
+verification TXT and `_domainconnect` record at Squarespace; no nameserver move
+is needed for normal GitHub Pages domain routing. Use current official domain
+instructions and the exact account target rather than reusing Cloudflare values.
+A `CNAME` change to `neldo.app`, GitHub custom-domain setting, DNS record edits and
+HTTPS verification require parent coordination. The old-domain redirect plan
+remains separate; neither domain behavior nor mail delivery is verified here.

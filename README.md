@@ -82,9 +82,13 @@ marketing site; hosting eligibility remains uncertain. Review that purpose with
 GitHub Support before treating Pages as confirmed production hosting. Do not
 claim blanket permission based only on the absence of payment code.
 
-The approximately 709 KB reviewed static site is below the published 1 GB size
-limit. Pages has a soft 100 GB/month bandwidth limit and may rate-limit traffic;
-it is not an unlimited hosting commitment. See the official limits above.
+The 26 active static files in the reviewed archive total approximately 709 KB.
+The existing Pages repository root also includes unchanged historical assets and
+README: 64 tracked files total approximately 8.18 MB. Pages can serve these root
+files directly; the 26-file archive is not a Pages deployment allowlist. The root
+is below the published 1 GB size limit. Pages has a soft 100 GB/month bandwidth
+limit and may rate-limit traffic; it is not an unlimited hosting commitment. See
+the official limits above.
 
 Read-only source/protection evidence: main has no active branch protection and
 no repository rulesets at the time inspected, but this task still uses a PR for
